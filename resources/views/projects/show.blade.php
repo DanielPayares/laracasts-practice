@@ -11,5 +11,14 @@
         <p>
             {{ $project->description }}
         </p>
+            @if($project->tasks->count())
+            <div class="alert alert-primary">
+                Tasks
+            </div>
+            @endif
+            
+            @foreach($project->tasks as $task)
+            <li> {{ $task->description }} </li>
+            @endforeach
     </div>
 @endsection
